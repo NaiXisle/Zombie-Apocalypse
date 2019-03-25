@@ -1,0 +1,196 @@
+<!DOCTYPE html> <html><head>
+        <title>Zombie Apocalypse</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <style>body{
+background-image: url("https://wallpaperplay.com/walls/full/9/3/5/146078.jpg");    
+background-size: 100%;
+background-repeat: no-repeat;
+
+    }
+
+
+    
+.dropvalparent{
+display: flex;
+justify-content: center;
+
+    }    
+
+.all{
+display: flex;
+justify-content: center;
+height: 30px;
+
+    }
+
+#btn1{
+font-size: 17px;    
+font-family: 'Permanent Marker', cursive;
+background-color: white;
+color: darkblue;
+border: solid 3px;
+border-radius: 3px;
+border-color: darkblue;
+width: 325px;  
+   }
+
+#btn2{
+font-size: 20px;    
+font-family: 'Permanent Marker', cursive;
+background-color: white;
+color: darkblue;
+border: solid 3px;
+border-radius: 3px;
+border-color: darkblue;
+width: 325px;    
+    }
+
+.iptval{
+width: 475px;
+border: solid;
+border-color: white;
+font-size: 20px;    
+font-family: 'Permanent Marker', cursive;
+    }
+
+#dropval{
+width:375px;
+font-size: 20px;    
+font-family: 'Permanent Marker', cursive;
+    }   
+
+.para{
+display: flex;
+font-size: 25px;    
+font-family: 'Permanent Marker', cursive;
+color: lightblue;
+border: solid 5px;
+border-radius: 3px;
+width: 445px;
+background-color: rgba(0, 0, 0, 0.4);
+opacity: 200;
+    } 
+
+.parentp{
+display: flex;
+justify-content: center;
+    }    
+    </style></head>
+    
+    <body>
+    
+    <div class="all">
+    <button id="btn1">Check Total</button>  <input class="iptval"> <button id="btn2">Add To Total</button>
+    </div>
+    <div class="dropvalparent">
+    <select id="dropval">
+    <option value="1">Weapons</option>
+    <option value="2">Food</option>
+    <option value="3">Medicine</option>
+    </select>    
+    </div>
+    <div class="parentp">
+    <p class="para">
+    You have awoken... you are a soldier who's comrades have all perished. You remember that your mission was to find the last remaining humans who have not been infected by the supervirus X-54T4N, and bring them to the reserve. You continue to search for several hours until you realze you need to survive for the night. With the sheer amount of zombies that you've killed. You start to question you are the only uninfected person left alive. You're determination continues to drive you foward, will you succeed?
+    </p>
+    </div>
+    
+
+<script>
+/*__POPCODESTART__*/
+//Object 1: Weapons
+var Weapons = {
+    Knives: 5,
+    Guns: 2,
+    Baseballbats: 2,
+    Brassknuckles: 8,
+    Grenades: 10,
+    calcTotalWep: function(){
+    alert('You have 27 weapons');},
+ 
+    addtoTotal: function(a){ 
+     return a + this.Knives;
+     }
+};
+    console.log(Weapons);
+
+//Object 2: Food
+var Food = {
+    Chicken: 8,
+    Waterbottles: 12,
+    Cannedsoup: 6,
+    Bread: 13,
+    Cannedbeans: 5, 
+    
+    calcTotalFood: function(){
+    return this.Chicken + this.Waterbottles + this.Cannedsoup + this.Bread ;
+    },
+    
+    addtoTotal: function(a){
+    return a + this.Waterbottles;    
+        }
+    };
+    //console.log(Food.calcTotalFood());
+
+//Object 3: Medicine
+var Medicine = {
+    BandAids: 20,
+    Hydrogenperoxide: 3,
+    Antidotes: 3,
+    Painkillers: 7,
+    Gauze: 8,
+
+    calcTotalMed: function(){
+    return this.BandAids + this.Hydrogenperoxide + this.Antidotes + this.Painkillers + this.Gauze; 
+    },
+    
+    addtoTotal: function(a){
+    return a + this.BandAids;}
+    };
+//console.log(Medicine.calcTotalMed());
+
+//first click function
+var drop1;
+var dropval1;
+document.getElementById('btn1').addEventListener('click', function(){
+drop1 = document.getElementById('dropval');
+dropval1 = drop1.options[drop1.selectedIndex].text;
+//console.log(dropval1);
+
+
+switch(dropval1){
+  case 'Weapons': console.log(Weapons.calcTotalWep());
+  break;  
+  case 'Food': alert('You have' + ' ' + Food.calcTotalFood() + ' ' + 'food items');
+  break;
+  case 'Medicine': alert('You have' + ' ' + Medicine.calcTotalMed() + ' ' + 'medicine items');
+  break;
+  default: console.log("error 404");
+    }
+});
+
+//Second click function
+
+
+var ipt;
+var drop2;
+var dropval2;
+document.getElementById('btn2').addEventListener('click',function(){
+drop2 = document.getElementById('dropval');
+dropval2 = drop2.options[drop2.selectedIndex].text;
+ipt= document.querySelector('.iptval').value;
+var parseipt= parseInt(ipt);
+console.log(parseipt);
+
+
+
+switch(dropval2){
+    case 'Weapons': alert( 'You have' + ' ' + Weapons.addtoTotal(parseipt) + ' ' + 'weapon items' );
+    break;
+    case 'Food': alert( 'You have' + ' ' + Food.addtoTotal(parseipt) + ' ' + 'food items');
+    break;
+    case 'Medicine': alert( 'You have' + ' ' + Medicine.addtoTotal(parseipt) + ' ' + 'medicine items');
+    break;
+    }
+    });
+    </script></body></html>
