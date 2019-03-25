@@ -1,0 +1,75 @@
+body{
+background-image: url("https://wallpaperplay.com/walls/full/9/3/5/146078.jpg");    
+background-size: 100%;
+background-repeat: no-repeat;
+
+    }
+
+
+    
+.dropvalparent{
+display: flex;
+justify-content: center;
+
+    }    
+
+.all{
+display: flex;
+justify-content: center;
+height: 30px;
+
+    }
+
+#btn1{
+font-size: 17px;    
+font-family: 'Permanent Marker', cursive;
+background-color: white;
+color: darkblue;
+border: solid 3px;
+border-radius: 3px;
+border-color: darkblue;
+width: 325px;  
+   }
+
+#btn2{
+font-size: 20px;    
+font-family: 'Permanent Marker', cursive;
+background-color: white;
+color: darkblue;
+border: solid 3px;
+border-radius: 3px;
+border-color: darkblue;
+width: 325px;    
+    }
+
+.iptval{
+width: 475px;
+border: solid;
+border-color: white;
+font-size: 20px;    
+font-family: 'Permanent Marker', cursive;
+    }
+
+#dropval{
+width:375px;
+font-size: 20px;    
+font-family: 'Permanent Marker', cursive;
+    }   
+
+.para{
+display: flex;
+font-size: 25px;    
+font-family: 'Permanent Marker', cursive;
+color: lightblue;
+border: solid 5px;
+border-radius: 3px;
+width: 445px;
+background-color: rgba(0, 0, 0, 0.4);
+opacity: 200;
+    } 
+
+.parentp{
+display: flex;
+justify-content: center;
+    }    
+    
